@@ -21,9 +21,9 @@ scene.add( light );
 
 const geometry = new THREE.PlaneBufferGeometry( 80, 80, 32, 32 );
 const loader = new THREE.TextureLoader();
-const t = loader.load('https://aleksandermasojc.github.io/CV/static/t.png')
-const h = loader.load('https://aleksandermasojc.github.io/CV/static/h3.png')
-const a = loader.load('https://aleksandermasojc.github.io/CV/static/a.png')
+const t = loader.load('https://aleksandermasojc.github.io/CV/t.png')
+const h = loader.load('https://aleksandermasojc.github.io/CV/h3.png')
+const a = loader.load('https://aleksandermasojc.github.io/CV/a.png')
 const material = new THREE.MeshStandardMaterial({
     map: t,
     displacementMap: h,
