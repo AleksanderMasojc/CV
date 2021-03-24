@@ -24,11 +24,17 @@ canvas{
     flex-direction: column;
 }
 .name{
-    font-size: 1.1em;
+    font-size: 1em;
+}
+.name span{
+    font-size: 1.2em;
 }
 .surname{
-    font-size: 1em;
-    margin-bottom: 40px;
+    font-size: .9em;
+    margin-bottom: .9em;
+}
+.surname span{
+    font-size: 1.1em;
 }
 .container p{
     font-size: .4em;
@@ -37,7 +43,7 @@ canvas{
     height: 100vh;
 }
 .page2{
-    height: 100vh;
+    min-height: 100vh;
     background: #203647;
 }
 .boxContainer{
@@ -91,8 +97,13 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-size: 32px;
     margin-top: 40px;
     height: 235px;
     background: #2d5c83;
+}
+.klauzula{
+    padding: 20px;
+    font-size: .5em;
 }
