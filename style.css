@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    background: #12232E;
+    color: white;
+}
+canvas{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80vmin;
+    z-index: 1;
+}
+.container{
+    font-size: 6vmax;
+    font-weight: 700;
+    margin: 10vmin 0 0 15vmin;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.name{
+    font-size: 1.1em;
+}
+.surname{
+    font-size: 1em;
+    margin-bottom: 40px;
+}
+.container p{
+    font-size: .4em;
+}
+.page{
+    height: 100vh;
+}
+.page2{
+    height: 100vh;
+    background: #203647;
+}
+.boxContainer{
+    font-size: 8vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.boxContainer .title{
+    width: 100vw;
+    text-align: center;
+}
+.boxContainer h2{
+    font-size: 1em;
+}
+.box{
+    margin: 15px 30px 25px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+}
+.boxName{
+    font-size: .8em;
+}
+.starsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.starsContainer .gold{
+    color: gold;
+}
+.starsContainer li{
+    list-style-type: none;
+    width: .9em;
+}
+.starsContainer li svg{
+    width: .7em;
+}
+.starsContainer li svg:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.title{
+    padding: 50px 0 40px;
+}
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin-top: 40px;
+    height: 235px;
+    background: #2d5c83;
+}
