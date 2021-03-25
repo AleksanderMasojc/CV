@@ -1,6 +1,6 @@
 const canvas = document.querySelector('canvas.threejs')
 
-let WIDTH = window.innerWidth * .65, HEIGHT = window.innerHeight
+let WIDTH = window.innerWidth * 0.6, HEIGHT = window.innerHeight
 
 const camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 1, 8000)
 camera.position.set(0, 0, 170);
@@ -12,18 +12,18 @@ renderer.setSize(WIDTH, HEIGHT);
 
 document.body.appendChild(renderer.domElement)
 
-const ambientLight = new THREE.AmbientLight("#fff", 1.2);
-scene.add(ambientLight)
-
-const light = new THREE.PointLight( "#fff", .9, 100 );
-light.position.set( 20, 20, 50 );
+const light = new THREE.PointLight( "#fff", 3, 100 );
+light.position.set( 0, 5, 0 );
 scene.add( light );
 
-const geometry = new THREE.PlaneBufferGeometry( 80, 80, 32, 32 );
+const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.6 );
+scene.add( directionalLight );
+
+const geometry = new THREE.PlaneBufferGeometry( 100, 100, 32, 32 );
 const loader = new THREE.TextureLoader();
-const t = loader.load('https://aleksandermasojc.github.io/CV/t.png')
+const t = loader.load('./t2.png')
 const h = loader.load('https://aleksandermasojc.github.io/CV/h3.png')
-const a = loader.load('https://aleksandermasojc.github.io/CV/a.png')
+const a = loader.load('./a3.png')
 const material = new THREE.MeshStandardMaterial({
     map: t,
     displacementMap: h,
@@ -31,8 +31,9 @@ const material = new THREE.MeshStandardMaterial({
     alphaMap: a,
     transparent: true,
     depthTest: false,
-    flatShading: true,
+    //flatShading: true,
 });
+
 const plane = new THREE.Mesh( geometry, material );
 scene.add( plane );
 
@@ -66,10 +67,13 @@ function handleWindowResize() {
     if(window.innerWidth<900){
         WIDTH = window.innerWidth
     }else{
-        WIDTH = window.innerWidth * .65;
+        WIDTH = window.innerWidth * .6;
     }
     renderer.setSize(WIDTH, HEIGHT);
     camera.aspect = WIDTH / HEIGHT;
     camera.updateProjectionMatrix();
+}
+window.onload = function(){
+    handleWindowResize()
 }
 window.addEventListener('resize', handleWindowResize)
