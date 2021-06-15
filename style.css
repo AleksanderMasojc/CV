@@ -11,7 +11,7 @@ body{
 }
 canvas{
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
     width: 80vmin;
     z-index: 1;
@@ -49,7 +49,6 @@ canvas{
     height: 100vh;
 }
 .page2{
-    min-height: 100vh;
     background: #203647;
 }
 .boxContainer{
@@ -98,25 +97,20 @@ canvas{
 .title{
     padding: 50px 0 40px;
 }
+.sectionContainer{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 .page2{
-    position: relative;
+    flex: 1;
 }
 footer{
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 6.5vmin;
-    margin-top: 30px;
-    padding: 25px 0 30px;
+    font-size: 5.5vmin;
     background: #2d5c83;
-}
-.klauzula{
-    padding-top: 20px;
-    font-size: .35em;
-    text-align: center;
+    padding: 2.65vh 0;
 }
