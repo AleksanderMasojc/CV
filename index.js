@@ -9,6 +9,7 @@ const scene = new THREE.Scene();
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas: canvas});
 renderer.setSize(WIDTH, HEIGHT);
+renderer.setPixelRatio( window.devicePixelRatio );
 
 document.body.appendChild(renderer.domElement)
 
@@ -21,16 +22,16 @@ scene.add( directionalLight );
 
 const geometry = new THREE.PlaneBufferGeometry( 100, 100, 32, 32 );
 const loader = new THREE.TextureLoader();
-const t = loader.load('https://aleksandermasojc.github.io/CV//t2.png')
+const t = loader.load('./t2.png')
 const h = loader.load('https://aleksandermasojc.github.io/CV/h3.png')
-const a = loader.load('https://aleksandermasojc.github.io/CV//a3.png')
+const a = loader.load('./a3.png')
 const material = new THREE.MeshStandardMaterial({
     map: t,
     displacementMap: h,
     displacementScale: 8,
     alphaMap: a,
     transparent: true,
-    depthTest: false,
+    depthTest: true,
     //flatShading: true,
 });
 
@@ -43,7 +44,6 @@ let y = 0
 function animateMove(event){
     let client = event.clientY
     let client_x = event.clientX
-    let w = WIDTH - client_x
     if(client_x > 750 && window.innerWidth > 1300){ y = HEIGHT - client }
     else if(window.innerWidth < 1300){ y = HEIGHT - client }
     else{ y = 8 }
@@ -61,11 +61,12 @@ function render() {
 }
 render()
 
-function handleWindowResize() {
+function resize() {
     HEIGHT = window.innerHeight;
     
     if(window.innerWidth<900){
         WIDTH = window.innerWidth
+        HEIGHT = window.innerHeight *.9
     }else{
         WIDTH = window.innerWidth * .6;
     }
@@ -74,6 +75,6 @@ function handleWindowResize() {
     camera.updateProjectionMatrix();
 }
 window.onload = function(){
-    handleWindowResize()
+    resize()
 }
-window.addEventListener('resize', handleWindowResize)
+window.addEventListener('resize', resize)
